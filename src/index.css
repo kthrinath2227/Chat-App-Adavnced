@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-purple: #8A2BE2; /* Bluish-purple */
+  --dark-purple: #6A0DAD;   /* Darker purple */
+  --accent-purple: #9370DB; /* Medium purple */
+  --light-purple: #E6E6FA;  /* Lavender (for sent messages) */
+  --background-purple: #483D8B; /* Dark Slate Blue for background */
+  --link-blue: #34b7f1;      /* Keep a distinct blue for links/read status */
+  --whatsapp-gray: #ece5dd; /* General light gray */
+  --whatsapp-dark-gray: #3b4a54; /* Dark gray for text */
+  --whatsapp-border: #e9edef; /* Border colors */
+}
+
+body {
+  @apply text-gray-900 font-sans;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.primary-purple {
+  background-color: var(--primary-purple);
+}
+
+.dark-purple {
+  background-color: var(--dark-purple);
+}
+
+.accent-purple {
+  background-color: var(--accent-purple);
+}
+
+.light-purple {
+  background-color: var(--light-purple);
+}
+
+.link-blue {
+  background-color: var(--link-blue);
+}
+
+.whatsapp-gray {
+  background-color: var(--whatsapp-gray);
+}
+
+.chat-background {
+  background-color: var(--background-purple);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5ddd5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.message-bubble {
+  max-width: 65%;
+  word-wrap: break-word;
+}
+
+.message-sent {
+  background-color: var(--light-purple);
+  margin-left: auto;
+}
+
+.message-received {
+  background-color: white;
+  margin-right: auto;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #999;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.online-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-purple);
+  border-radius: 50%;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
